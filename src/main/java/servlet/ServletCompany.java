@@ -1,11 +1,21 @@
 package servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import dao.DaoCompany;
+import dao.DaoFactory;
+import database.Cartridge;
+import database.Company;
 
 public class ServletCompany extends HttpServlet{
 
@@ -17,10 +27,30 @@ public class ServletCompany extends HttpServlet{
 	}
 	
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		super.doGet(req, resp);
-	}
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		if (req.getParameter("name_company") != null){
+			
+		
+		DaoCompany daoCompany = new DaoFactory().getDaoCompany();
+		
+		List<Cartridge> listCartridges = new ArrayList<Cartridge>();
+		listCartridges =null;
+		Company company = new Company("DZK Compnay", listCartridges );
+		
+		try {
+			daoCompany.insert(company);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		RequestDispatcher rd = getServletContext().getRequestDispatcher(
+				"/view-company.jsp");
+		rd.forward(req, resp);
+			}
 	
+	}
 
 }

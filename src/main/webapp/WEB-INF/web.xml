@@ -5,9 +5,14 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
 	<servlet>
-		<servlet-name>ImplDaoDataBase</servlet-name>
-		<display-name>ImplDaoDataBase</display-name>
+		<servlet-name>ServletCompany</servlet-name>
+		<display-name>ServletCompany</display-name>
 		<description></description>
-		<servlet-class>com.web.tomcat.database.SimpleServlet</servlet-class>
+		<servlet-class>servlet.ServletCompany</servlet-class>
 	</servlet>
+		
+	<servlet-mapping>	
+		<servlet-name>ServletCompany</servlet-name>
+		<url-pattern>/ServletCompany</url-pattern>
+	</servlet-mapping>
 </web-app>

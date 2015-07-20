@@ -7,10 +7,10 @@
 <title>Добавити компанію</title>
 </head>
 <body>
-	<form action="view-company.jsp" method="get">
+	<form action="/ServletCompany" method="post">
 		<p>Добавити компанію </p>
 		name company <input type ="text" name="name_company">
-		<input type= "submit" name="Enter" value="Ok"> 
+		<input type= "submit" name="add_name" value="Ok"> 
 	</form>
 
 
@@ -19,7 +19,7 @@
    	 int amount = 0;
 	%>
 	<% amount++; %>
-Result = <%= amount %>
+	You visited this page <%= amount %> times
 
 
 </body>

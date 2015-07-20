@@ -10,6 +10,13 @@
 <h2>Hello User!!!</h2>
 <p>This my first web-java project</p>
 <p>Це мій перший web-java проек</p>
-<a href = "https://google.com">google.com link</a>
+
+
+<a href = "view-company.jsp">View Company</a></br></br>
+
+<a href = "add-company.jsp">Add Company</a></br></br>
+
+<a href = "/ServletCompany">visited my first servlet</a></br></br>
+
 </body>
 </html>
