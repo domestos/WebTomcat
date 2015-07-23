@@ -16,8 +16,7 @@ import javax.persistence.OneToMany;
 
 
 @Entity
-public class Company {
-	
+public class Company {	
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -28,8 +27,6 @@ public class Company {
 	
 	@OneToMany ( cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy = "company")
 	private List<Cartridge> listCartridges;
-	
-	
 	
 	// BEGIN //CONSTRUCTOR
 	public Company(String nameCompany, List<Cartridge> listCartridges) {
@@ -47,18 +44,13 @@ public class Company {
 		this.id = id;
 	}
 
-
 	public String getNameCompany() {
 		return nameCompany;
 	}
 
-
 	public void setNameCompany(String nameCompany) {
 		this.nameCompany = nameCompany;
 	}
-
-	
-	
 
 	public List<Cartridge> getListCartridges() {
 		return listCartridges;

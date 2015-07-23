@@ -7,7 +7,7 @@
 <title>Добавити компанію</title>
 </head>
 <body>
-	<form action="/ServletCompany" method="post">
+	<form action="ServletCompany" method="post">
 		<p>Добавити компанію </p>
 		name company <input type ="text" name="name_company">
 		<input type= "submit" name="add_name" value="Ok"> 

@@ -28,15 +28,15 @@ public class ServletCompany extends HttpServlet{
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		if (req.getParameter("name_company") != null){
+		String nCompany = req.getParameter("name_company");
+		if (nCompany  != null){
 			
 		
 		DaoCompany daoCompany = new DaoFactory().getDaoCompany();
 		
 		List<Cartridge> listCartridges = new ArrayList<Cartridge>();
 		listCartridges =null;
-		Company company = new Company("DZK Compnay", listCartridges );
+		Company company = new Company(nCompany , listCartridges );
 		
 		try {
 			daoCompany.insert(company);
